@@ -13,6 +13,7 @@ const { frontmatter } = Astro.props;
     background-color: #e4e4e4;
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
+    text-decoration: none;
   }
 </style>
 
@@ -24,7 +25,9 @@ const { frontmatter } = Astro.props;
   <div class="tags">
     {
       frontmatter.tags.map((tag: string) => (
-        <span class="tag">{`#${tag}`}</span>
+        <a class="tag" href={`/tags/${tag}`}>
+          {`#${tag}`}
+        </a>
       ))
     }
   </div>
